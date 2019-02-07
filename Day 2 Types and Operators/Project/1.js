@@ -100,17 +100,44 @@
 // }
 // console.log(sum);
 
-
+//==============================================================
 
 // If user enters positive number, that number won't be displayed
-
 // Funnction to check whether an integer entered by the user is odd or even
+// function oddEven(num) {
+// 	if (num % 2 === 0) {
+// 		console.log("This # is even.");
+// 	} else console.log("This is odd. Go away!");
+// }
 
 // Funnction to take two input and show the relation using =, > or < i.e (21,45) 21 < 45, (23,12) 23 > 12
+// function relCheck(a, b) {
+// 	if (a > b) {
+// 		console.log(a, "is greater than", b);
+// 	} else if (a < b) {
+// 		console.log(b, "is greater than", a);
+// 	} else console.log(a, "is equal to", b);
+// }
 
 // Funnction to Check Whether a Character is Vowel or Consonant
+// function charCheck(i) {
+// 	if (i == "a" || i == "e" || i == "i" || i == "o" || i == "u") {
+// 		console.log("This is a vowel");
+// 	} else console.log("This is a consonant");
+// }
 
 // Funnction to Find the Largest Number Among Three Numbers
+// function largestNum(a, b, c) {
+//  if (a > b && a > c) {
+// 	 console.log(a, "is largest");
+//  } else if (b > a && b > c) {
+// 	 console.log(b, "is largest");
+//  } else if (c > a && c > b) {
+// 	 console.log(c, "is largest");
+//  } else if ( a === b && b === c && a === c) {
+// 	 console.log("All numbers are equal");
+//  }
+// }
 
 //Switch
 // You are given a variable, . Your task is to print:

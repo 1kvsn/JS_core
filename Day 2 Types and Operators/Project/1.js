@@ -1,9 +1,9 @@
 // Get two values from the user ‘password’ and ‘confirm password’  using the prompt box and display a message “Password validated” if both the values match else display the message “Password do not match”.
-// let value1 = prompt("Enter Password");
-// let value2 = prompt("Confirm Password");
+// let value1 = prompt( "Enter Password" );
+// let value2 = prompt( "Confirm Password" );
 // if (value1 === value2) {
-// 	console.log("Password Validated");
-// } else console.log("Password do not match");
+// 	console.log( "Password Validated" );
+// } else console.log( "Password do not match" );
 
 
 
@@ -40,15 +40,15 @@
 // let isGuestTwoVeg = false;
 
 // // If both are veg "Only offer up vegan dishes."
-// if (isGuestOneVeg === true && isGuestTwoVeg === true) {
-// 	console.log("Only offer vegan dishes.");
+// if ( isGuestOneVeg === true && isGuestTwoVeg === true ) {
+// 	console.log( "Only offer vegan dishes." );
 // }
 // // At least one veg  "Make sure to offer up some vegan options."
 // // Else, "Offer up anything on the menu"
 
-// if (isGuestOneVeg === true || isGuestTwoVeg === true) {
-// 	console.log("Make sure to offer some vegan options.");
-// } else console.log("Offer anything on the menu.");
+// if ( isGuestOneVeg === true || isGuestTwoVeg === true ) {
+// 	console.log( "Make sure to offer some vegan options." );
+// } else console.log( "Offer anything on the menu." );
 
 //===========================================================
 //===========================================================
@@ -56,15 +56,15 @@
 // let temp = 4;
 
 // 1. If temperature is less then 32 alert "It is freezing outside"
-// if (temp < 4) {
-// 	alert("It is freezing outside");
+// if ( temp < 4 ) {
+// 	alert( "It is freezing outside" );
 // }
 
 // 2. If the temperature is greater then 110 alert "It is hot outside"
 // 3. else 'Go for it. It is pretty nice out'.
-// if (temp > 110) {
-// 	alert("It is hot outside");
-// } else alert("Go for it. It is pretty nice out");
+// if ( temp > 110 ) {
+// 	alert( "It is hot outside" );
+// } else alert( "Go for it. It is pretty nice out" );
 
 //=============================================================
 //=============================================================
@@ -79,10 +79,10 @@
 
 // Create a function which takes two input and (a,b) and display the sum, sub, multiplication, devision of those two numbers.
 // function num(a,b) {
-// 	console.log("Addition is:", a+b);
-// 	console.log("Substraction is:", a-b);
-// 	console.log("Multiplication is:", a*b);
-// 	console.log("Division is:", a/b);
+// 	console.log( "Addition is:", a+b );
+// 	console.log( "Substraction is:", a-b );
+// 	console.log( "Multiplication is:", a*b );
+// 	console.log( "Division is:", a/b );
 // }
 
 //===========================================================
@@ -93,49 +93,49 @@
 // If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
 // Find the sum of all the multiples of 3 or 5 below 1000.
 // let sum = 0;
-// for (let num = 1; num < 1000; num++) {
-// 	if (num % 3 === 0 || num % 5 === 0) {
+// for ( let num = 1; num < 1000; num++ ) {
+// 	if ( num % 3 === 0 || num % 5 === 0 ) {
 // 		sum += num;
 // 	}
 // }
-// console.log(sum);
+// console.log( sum );
 
 //==============================================================
 
 // If user enters positive number, that number won't be displayed
 // Funnction to check whether an integer entered by the user is odd or even
 // function oddEven(num) {
-// 	if (num % 2 === 0) {
-// 		console.log("This # is even.");
-// 	} else console.log("This is odd. Go away!");
+// 	if ( num % 2 === 0 ) {
+// 		console.log( "This # is even." );
+// 	} else console.log( "This is odd. Go away!" );
 // }
 
 // Funnction to take two input and show the relation using =, > or < i.e (21,45) 21 < 45, (23,12) 23 > 12
 // function relCheck(a, b) {
-// 	if (a > b) {
-// 		console.log(a, "is greater than", b);
-// 	} else if (a < b) {
-// 		console.log(b, "is greater than", a);
-// 	} else console.log(a, "is equal to", b);
+// 	if ( a > b ) {
+// 		console.log( a, "is greater than", b );
+// 	} else if ( a < b ) {
+// 		console.log( b, "is greater than", a );
+// 	} else console.log( a, "is equal to", b );
 // }
 
 // Funnction to Check Whether a Character is Vowel or Consonant
 // function charCheck(i) {
-// 	if (i == "a" || i == "e" || i == "i" || i == "o" || i == "u") {
-// 		console.log("This is a vowel");
-// 	} else console.log("This is a consonant");
+// 	if ( i == "a" || i == "e" || i == "i" || i == "o" || i == "u" ) {
+// 		console.log( "This is a vowel" );
+// 	} else console.log( "This is a consonant" );
 // }
 
 // Funnction to Find the Largest Number Among Three Numbers
 // function largestNum(a, b, c) {
-//  if (a > b && a > c) {
-// 	 console.log(a, "is largest");
-//  } else if (b > a && b > c) {
-// 	 console.log(b, "is largest");
-//  } else if (c > a && c > b) {
-// 	 console.log(c, "is largest");
-//  } else if ( a === b && b === c && a === c) {
-// 	 console.log("All numbers are equal");
+//  if ( a > b && a > c ) {
+// 	 console.log( a, "is largest" );
+//  } else if ( b > a && b > c ) {
+// 	 console.log( b, "is largest");
+//  } else if ( c > a && c > b ) {
+// 	 console.log( c, "is largest" );
+//  } else if ( a === b && b === c && a === c ) {
+// 	 console.log( "All numbers are equal" );
 //  }
 // }
 

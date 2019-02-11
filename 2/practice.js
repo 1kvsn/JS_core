@@ -1,6 +1,6 @@
 // Log message in console saying "I'm Learning Javascript"
 // let message = "I'm learning JavaScript";
-// console.log(message);
+// console.log( message );
 
 // var name = "Mark";  "Mark" is a string.  What is name?
 // name is a variable.
@@ -17,7 +17,7 @@
 // let admin = name;
 
 // Show the value of admin using alert (must output “John”).
-// alert(name);
+// alert( name );
 
 // Use alert function to to show a message saying “Hello World”  https://javascript.info/alert-prompt-confirm
 // Done
@@ -26,9 +26,9 @@
 // Done earlier
 
 // Modify the previous program such that only the users Alice and Bob are greeted with their names.
-// var tag = document.querySelector("button");
+// var tag = document.querySelector( "button" );
 // tag.onClick = function handleClick() {
-// 	var name = prompt("What's your name?");
+// 	var name = prompt( "What's your name?" );
 // 	tag.textContent = "Hello! " + name;
 // }
 
@@ -38,9 +38,9 @@
 // Incorrect method to declare a variable. Alternate method could be product_cost
 
 // Write a function that takes 'user' as an argument and log a message in console saying "Hello Sam, How are you doing?" if name of the user passed is "Sam"
-// let user = prompt("What's your name?");
+// let user = prompt( "What's your name?" );
 // let name = "Hello Sam, How are you doing";
-// if (user == "Sam") console.log(alert(name));
+// if ( user == "Sam" ) console.log( alert(name) );
 
 // Right or Wrong
 //   "Hello World" Right
@@ -50,31 +50,31 @@
 
 // Get an input from the user using the prompt box and display the length of the string.
 // e.g “Learning is fun” should output will be 15.
-// var str = prompt("Enter Anything...");
+// var str = prompt( "Enter Anything..." );
 // var n = str.length;
-// alert("The length of your typed text is " + n);
+// alert( "The length of your typed text is " + n );
 
 // Age of the owner
 // Calculate the age of the dog if owner's age is 7 times of dog
 // var age = 26;
 // var dog = age/7;
-// alert(dog);
+// alert( dog );
 
 
 // Use console.log() function to log the age of the dog
 // var age = 26;
 // var dog = age/7;
-// console.log(dog);
+// console.log( dog );
 
 // Marks and max marks of the student
 // var studentScore = 41;
 // var maxScore = 100;
 // // Calculate the percentage of marks the student got
 // var cent = studentScore/maxScore * 100;
-// // alert(cent + " %");
+// // alert( cent + " %" );
 
 // // log the percentage in console using console.log()
-// console.log(cent + " %");
+// console.log( cent + " %" );
 
 
 // var city = "Dharamshala";
@@ -88,10 +88,10 @@
 
 // Make a simple calculator with these functions. Using prompt, type conversion, if else statement.
 // 1. Add
-// var num1_str = prompt("Enter a number..");
-// var num1 = Number(num1_str);
-// var num2_str = prompt("Enter the second number");
-// var num2 = Number(num2_str);
+// var num1_str = prompt( "Enter a number.." );
+// var num1 = Number( num1_str );
+// var num2_str = prompt( "Enter the second number" );
+// var num2 = Number( num2_str );
 // var sum = num1 + num2
 // alert(sum);
 

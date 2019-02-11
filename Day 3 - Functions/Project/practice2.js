@@ -412,13 +412,13 @@ let checkOdd = n => {
 function checkGrade(score) {
   if ( score >= 90 && score <= 100 ) {
     return("A");
-  } else if (score >= 80 && score <= 89) {
+  } else if ( score >= 80 && score <= 89 ) {
     return("B");
-  } else if (score >= 70 && score <= 79) {
+  } else if ( score >= 70 && score <= 79 ) {
     return("C");
-  } else if (score >= 60 && score <= 69) {
+  } else if ( score >= 60 && score <= 69 ) {
     return("D");
-  } else if (score <=59 ) {
+  } else if ( score <=59 ) {
     return("F");
   }
 }
@@ -428,13 +428,13 @@ function checkGrade(score) {
 let checkGrade = function(score) {
   if ( score >= 90 && score <= 100 ) {
     return("A");
-  } else if (score >= 80 && score <= 89) {
+  } else if ( score >= 80 && score <= 89 ) {
     return("B");
-  } else if (score >= 70 && score <= 79) {
+  } else if ( score >= 70 && score <= 79 ) {
     return("C");
-  } else if (score >= 60 && score <= 69) {
+  } else if ( score >= 60 && score <= 69 ) {
     return("D");
-  } else if (score <=59 ) {
+  } else if ( score <=59 ) {
     return("F");
   }
 }
@@ -442,14 +442,14 @@ let checkGrade = function(score) {
 let checkGrade = score => {
   if ( score >= 90 && score <= 100 ) {
     return("A");
-  } else if (score >= 80 && score <= 89) {
+  } else if ( score >= 80 && score <= 89 ) {
     return("B");
-  } else if (score >= 70 && score <= 79) {
+  } else if ( score >= 70 && score <= 79 ) {
     return("C");
-  } else if (score >= 60 && score <= 69) {
+  } else if ( score >= 60 && score <= 69 ) {
     return("D");
-  } else if (score <=59 ) {
-    return("F");
+  } else if ( score <=59 ) {
+    return( "F" );
   }
 }
 
@@ -475,14 +475,14 @@ function restaurant(reviews) {
  */
 //Function Declaration
 function wordJoin(word1, word2) {
-  return( word1 + " " + word2);
+  return( word1 + " " + word2 );
 }
 //Function Expression
 let wordJoin = function(word1, word2) {
-  return( word1 + " " + word2);
+  return( word1 + " " + word2 );
 }
 //Arrow Function
-let wordJoin = (word1, word2) => ( word1 + " " + word2);
+let wordJoin = (word1, word2) => ( word1 + " " + word2 );
 
 /**
  * Returns a circle object with the properties `circumference` and `area`.

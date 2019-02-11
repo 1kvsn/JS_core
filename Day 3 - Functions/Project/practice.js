@@ -134,3 +134,7 @@ function checkPal() {
 // Modify the previous program such that only multiples of 5 or 7 are considered in the sum, e.g. n = 20 (5,7,10,14,15,20) 71
 
 // Write a program that takes a number under (25) and prints the multiplication table for the number.
+function mulTable(n) {
+	
+}
+

@@ -1,67 +1,130 @@
-// # JavaScript String Exercises
+# JavaScript String Exercises
 
-// ### is_string
-// Write a JavaScript function to check whether an `input` is a *string or not*.
+### is_string
+Write a JavaScript function to check whether an `input` is a *string or not*.
 
     // console.log(is_string('w3resource')); 
     // true
     // console.log(is_string([1, 2, 4, 0]));
     // false
-function is_string(str) {
-    console.log(typeof str === "");
-}
 
+    function isString(str) {
+        console.log(typeof str === "string");
+    }
 
+// =======================================================
 
 ### is_Blank
 Write a JavaScript function to check whether a string *is blank or not*.
 
-    console.log(is_Blank('')); 
-    console.log(is_Blank('abc'));
-    true 
-    false
+    // console.log(is_Blank('')); 
+    // console.log(is_Blank('abc'));
+    // true 
+    // false
+
+    function isBlank(str) {
+        console.log( str == false);
+    }
+
+// ==============================================================
 
 ### string_Array
 Write a JavaScript *function to split a string and convert it into an array* of words.
 
-    console.log(string_to_array("Robin Singh"));
-    ["Robin", "Singh"]
+    // console.log(string_to_array("Robin Singh"));
+    // ["Robin", "Singh"]
+var str = "Robin Singh";
+    function stringArray(str) {
+        console.log(str.split(" "));
+    }
+
+// ==============================================================
 
 ### truncate
 Write a JavaScript function to remove specified number of characters from a string.
 
-    console.log(truncate_string("Robin Singh",4));
-    "Robi"
+    // console.log(truncate_string("Robin Singh",4));
+    // "Robi"
+    var str = "Robin Singh";
+    function truncateString(str) {
+        console.log(str.substring(0, 4));
+    }
+
+// ===============================================================
+
 
 ### abbrev_name
 Write a JavaScript function *to convert* a string in *abbreviated form*.
 
-    console.log(abbrev_name("Robin Singh"));
-    "Robin S."
+    // console.log(abbrev_name("Robin Singh"));
+    // "Robin S."
+    var str = "Robin Singh";
+    function abbrevName(str) {
+        // console.log(str.slice(0, 5)) + " " + console.log(str.slice(5, 6)) + ".";
+    console.log(str.slice(0, 5) + " " + (str.slice(6, 7)) + ".")
+    }
+
+// ================================================================
+
 
 ### protect
 Write a JavaScript function to hide email addresses to protect from unauthorized user.
 
-    console.log(protect_email("robin_singh@example.com"));
-    "robin...@example.com"
+    // console.log(protect_email("robin_singh@example.com"));
+    // "robin...@example.com"
+
+function protectEmail(str) {
+    var searched = str.search("@"); //index before @
+    slicedText = str.slice(0, searched/2); //nair
+    paddedText = slicedText.padEnd(8, ".");
+    remaining = str.substring(searched) //@example.com
+    console.log(paddedText + remaining);
+}
+
+
+// ================================================================
+
 
 ### parameterize
 Write a JavaScript function to *parameterize a string*.
 
-    console.log(string_parameterize("Robin Singh from USA."));
-    "robin-singh-from-usa"
+    // console.log(string_parameterize("Robin Singh from USA."));
+    // "robin-singh-from-usa"
+function string_parameterize(str) {
+    lowCased = str.toLowerCase(); //lowcased string with spaces
+    console.log(lowCased.replace(/ /g, "-"));
+}
+
+//=================================================================
 
 ### capitalize_first
 Write a JavaScript function to *capitalize the first letter of a string*. 
 
-    console.log(capitalize('js string exercises'));
-    "Js string exercises"
+    // console.log(capitalize('js string exercises'));
+    // "Js string exercises"
+function cap_first(str) {
+    firstLetter = str.substring(0, 1); //gives first letter
+    remainingLetter = str.substring(1); // gives remaining letter after the first
+    upperCased = firstLetter.toUpperCase(); // converts first letter to Uppercase
+    console.log(upperCased + remainingLetter);
+}
+
+//=================================================================
 
 ### capitalize_words
 Write a JavaScript function to *capitalize* the first letter *of each word* in a string.
 
-    console.log(capitalize_Words('js string exercises'));
-    "Js String Exercises"
+    // console.log(capitalize_Words('js string exercises'));
+    // "Js String Exercises"
+function capFirst(str) {
+    arrayedStr = str.split(" "); //makes array
+    for value in arrayedStr {
+        
+    }
+}
+
+
+//=================================================================
 
 ### swapcase
 Write a JavaScript function that takes a string which has lower and upper case letters as a parameter and *converts upper case letters to lower case*, and lower case letters to upper case.

@@ -5,9 +5,13 @@ var strings = ['this','is','a','collection','of','words'];
 
 // Use the above two arrays and practice array methods
 
-
 // Find largest number in numbers
 
+
+let newNum = 0
+let largestNum = numbers.filter(value => {
+  return newNum = value > newNum;
+}) 
 
 // Find longest string in strings
 

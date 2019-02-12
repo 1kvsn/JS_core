@@ -1,54 +1,54 @@
 # JavaScript String Exercises
 
-### is_string
-Write a JavaScript function to check whether an `input` is a *string or not*.
+// ### is_string
+// Write a JavaScript function to check whether an `input` is a *string or not*.
 
-    // console.log(is_string('w3resource')); 
-    // true
-    // console.log(is_string([1, 2, 4, 0]));
-    // false
+//     // console.log(is_string('w3resource')); 
+//     // true
+//     // console.log(is_string([1, 2, 4, 0]));
+//     // false
 
-    function isString(str) {
-        console.log(typeof str === "string");
-    }
+//     function isString(str) {
+//         console.log(typeof str === "string");
+//     }
 
 // =======================================================
 
-### is_Blank
-Write a JavaScript function to check whether a string *is blank or not*.
+// ### is_Blank
+// Write a JavaScript function to check whether a string *is blank or not*.
 
-    // console.log(is_Blank('')); 
-    // console.log(is_Blank('abc'));
-    // true 
-    // false
+//     // console.log(is_Blank('')); 
+//     // console.log(is_Blank('abc'));
+//     // true 
+//     // false
 
-    function isBlank(str) {
-        console.log( str == false);
-    }
-
-// ==============================================================
-
-### string_Array
-Write a JavaScript *function to split a string and convert it into an array* of words.
-
-    // console.log(string_to_array("Robin Singh"));
-    // ["Robin", "Singh"]
-var str = "Robin Singh";
-    function stringArray(str) {
-        console.log(str.split(" "));
-    }
+//     function isBlank(str) {
+//         console.log( str == false);
+//     }
 
 // ==============================================================
 
-### truncate
-Write a JavaScript function to remove specified number of characters from a string.
+// ### string_Array
+// Write a JavaScript *function to split a string and convert it into an array* of words.
 
-    // console.log(truncate_string("Robin Singh",4));
-    // "Robi"
-    var str = "Robin Singh";
-    function truncateString(str) {
-        console.log(str.substring(0, 4));
-    }
+//     // console.log(string_to_array("Robin Singh"));
+//     // ["Robin", "Singh"]
+// var str = "Robin Singh";
+//     function stringArray(str) {
+//         console.log(str.split(" "));
+//     }
+
+// ==============================================================
+
+// ### truncate
+// Write a JavaScript function to remove specified number of characters from a string.
+
+//     // console.log(truncate_string("Robin Singh",4));
+//     // "Robi"
+//     var str = "Robin Singh";
+//     function truncateString(str) {
+//         console.log(str.substring(0, 4));
+//     }
 
 // ===============================================================
 
@@ -67,47 +67,47 @@ Write a JavaScript function *to convert* a string in *abbreviated form*.
 // ================================================================
 
 
-### protect
-Write a JavaScript function to hide email addresses to protect from unauthorized user.
+// ### protect
+// Write a JavaScript function to hide email addresses to protect from unauthorized user.
 
-    // console.log(protect_email("robin_singh@example.com"));
-    // "robin...@example.com"
+//     // console.log(protect_email("robin_singh@example.com"));
+//     // "robin...@example.com"
 
-function protectEmail(str) {
-    var searched = str.search("@"); //index before @
-    slicedText = str.slice(0, searched/2); //nair
-    paddedText = slicedText.padEnd(8, ".");
-    remaining = str.substring(searched) //@example.com
-    console.log(paddedText + remaining);
-}
+// function protectEmail(str) {
+//     var searched = str.search("@"); //index before @
+//     slicedText = str.slice(0, searched/2); //nair
+//     paddedText = slicedText.padEnd(8, ".");
+//     remaining = str.substring(searched) //@example.com
+//     console.log(paddedText + remaining);
+// }
 
 
 // ================================================================
 
 
-### parameterize
-Write a JavaScript function to *parameterize a string*.
+// ### parameterize
+// Write a JavaScript function to *parameterize a string*.
 
-    // console.log(string_parameterize("Robin Singh from USA."));
-    // "robin-singh-from-usa"
-function string_parameterize(str) {
-    lowCased = str.toLowerCase(); //lowcased string with spaces
-    console.log(lowCased.replace(/ /g, "-"));
-}
+//     // console.log(string_parameterize("Robin Singh from USA."));
+//     // "robin-singh-from-usa"
+// function string_parameterize(str) {
+//     lowCased = str.toLowerCase(); //lowcased string with spaces
+//     console.log(lowCased.replace(/ /g, "-"));
+// }
 
 //=================================================================
 
-### capitalize_first
-Write a JavaScript function to *capitalize the first letter of a string*. 
+// ### capitalize_first
+// Write a JavaScript function to *capitalize the first letter of a string*. 
 
-    // console.log(capitalize('js string exercises'));
-    // "Js string exercises"
-function cap_first(str) {
-    firstLetter = str.substring(0, 1); //gives first letter
-    remainingLetter = str.substring(1); // gives remaining letter after the first
-    upperCased = firstLetter.toUpperCase(); // converts first letter to Uppercase
-    console.log(upperCased + remainingLetter);
-}
+//     // console.log(capitalize('js string exercises'));
+//     // "Js string exercises"
+// function cap_first(str) {
+//     firstLetter = str.substring(0, 1); //gives first letter
+//     remainingLetter = str.substring(1); // gives remaining letter after the first
+//     upperCased = firstLetter.toUpperCase(); // converts first letter to Uppercase
+//     console.log(upperCased + remainingLetter);
+// }
 
 //=================================================================
 
@@ -116,12 +116,10 @@ Write a JavaScript function to *capitalize* the first letter *of each word* in a
 
     // console.log(capitalize_Words('js string exercises'));
     // "Js String Exercises"
-function capFirst(str) {
-    arrayedStr = str.split(" "); //makes array
-    for value in arrayedStr {
-        
-    }
-}
+// let str = "this is a test";
+// function capFirst(str) {
+//     arrayedStr = str.split(" "); //makes array
+// }
 
 
 //=================================================================
@@ -129,39 +127,73 @@ function capFirst(str) {
 ### swapcase
 Write a JavaScript function that takes a string which has lower and upper case letters as a parameter and *converts upper case letters to lower case*, and lower case letters to upper case.
 
-    console.log(swapcase('AaBbc'));
-    "aAbBC"
+    // console.log(swapcase('AaBbc'));
+    // "aAbBC"
 
-### camelize
-Write a JavaScript function *to convert a string into camel case*.
+// pseudo code
 
-    console.log(camelize("JavaScript Exercises")); 
-    console.log(camelize("JavaScript exercises")); 
-    console.log(camelize("JavaScriptExercises"));
-    "JavaScriptExercises" 
-    "JavaScriptExercises" 
-    "JavaScriptExercises"
+//=================================================================
+
+// ### camelize
+// Write a JavaScript function *to convert a string into camel case*.
+
+//     // console.log(camelize("JavaScript Exercises")); 
+//     // console.log(camelize("JavaScript exercises")); 
+//     // console.log(camelize("JavaScriptExercises"));
+//     // "JavaScriptExercises" 
+//     // "JavaScriptExercises" 
+//     // "JavaScriptExercises"
+// function camelize(str) {
+//     let newStr = str.split(" ").map(str => str[0].toUpperCase() + str.substr(1, str.length));
+//     let finalStr = newStr.join("");
+//     console.log(finalStr);
+// }
+
+//==================================================================
 
 ### uncamelize
 Write a JavaScript function to *uncamelize* a string.
 
-    console.log(uncamelize('helloWorld','_'));
-    "hello_world"
+    // console.log(uncamelize('helloWorld','_'));
+		// "hello_world"
+		function unCamelize(str) {
+			str.split("").map(val => {
+				let newStr = [];
+				return val.toUppercase() === val ? newStr = val : val; 
+				}
+				
+				);
 
-### repeat
-Write a JavaScript function to *concatenates a given string n times* (default is 1).
+		}
 
-    console.log(repeat('Ha!',3));
-    "Ha!Ha!Ha!"
+//==================================================================
 
-### insert
-Write a JavaScript function to insert a string within a string at a *particular position* (default is 1).
+// ### repeat
+// Write a JavaScript function to *concatenates a given string n times* (default is 1).
+
+//     console.log(repeat('Ha!',3));
+//     "Ha!Ha!Ha!"
+// function concatStr(str) {
+//     return(str.repeat(10));
+// }
+//==================================================================
+
+// ### insert
+// Write a JavaScript function to insert a string within a string at a *particular position* (default is 1).
 
  
-    console.log(insert('We are doing some exercises.','JavaScript ',18));
-    "We are doing some exercises." 
-    "JavaScript We are doing some exercises." 
-    "We are doing some JavaScript exercises."
+//     // console.log(insert('We are doing some exercises.','JavaScript ',18));
+//     // "We are doing some exercises." 
+//     // "JavaScript We are doing some exercises." 
+//     // "We are doing some JavaScript exercises."
+
+// function insertString(str, toInsert, n) {
+//     newStr = str.split(" ");
+//     splicedStr = newStr.splice(n, 0, toInsert);
+//     console.log(newStr);   
+// }
+
+//===================================================================
 
 ### humanized
 Write a JavaScript function to humanized number (Formats a number to a human-readable string.) with the correct suffix such as 1st, 2nd, 3rd or 4th. 

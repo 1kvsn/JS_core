@@ -1,0 +1,168 @@
+/* CSS Resets */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Main CSS */
+:root {
+	--blue: #007bff;
+	--indigo: #6610f2;
+	--purple: #6f42c1;
+	--pink: #e83e8c;
+	--red: #dc3545;
+	--orange: #fd7e14;
+	--yellow: #ffc107;
+	--green: #28a745;
+	--teal: #20c997;
+	--cyan: #17a2b8;
+	--white: #fff;
+	--gray: #6c757d;
+	--gray-dark: #343a40;
+	--primary: #007bff; <!--blue-->
+	--secondary: #6c757d; <!--grey-->
+	--success: #28a745; <!--green-->
+	--info: #17a2b8; <!--cyan-->
+	--warning: #ffc107; <!--yellow-->
+	--danger: #dc3545; <!--red-->
+	--light: #f8f9fa; <!--light-white-->
+	--dark: #343a40; <!--grey-dark-->
+	--heading-text-one: #464f56;
+	--body-text-two: #3d3f44; <!--shade of black-->
+	--body-text-three: #8c9398; <!--light-grey-used-in-footer-text-->
+	--footer-body: #727377;
+	--font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	--font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+		font-size: 16px;
+}
+body {
+	font-family: var(--font-family-sans-serif);
+	line-height: 1.5;
+	color: var(--body-text-two);
+}
+
+
+/********** Base CSS *************/
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+a {
+	text-decoration: none;
+	/* color: #fff; */
+}
+button {
+	border: 0;
+	cursor: pointer;
+}
+button:focus {
+	outline: 0;
+}
+input {
+	border: 0;
+	margin: 0;
+}
+input:focus {
+	outline: 0;
+}
+/** Heading Elements **/
+h1 {
+	font-size: 3rem;
+	font-weight: 700;
+}
+h2 {
+	font-size: 2.5rem;
+	font-weight: 700;
+}
+h3 {
+	font-size: 2rem;
+	font-weight: 700;
+}
+h4 {
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+h5 {
+	font-size: 1rem;
+	font-weight: 700;
+}
+h6 {
+	font-size: 0.8rem;
+	font-weight: 700;
+}
+.float-left {
+	float: left;
+}
+.float-right {
+	float: right;
+}
+.capitalize {
+	text-transform: capitalize;
+}
+.uppercase {
+	text-transform: uppercase;
+}
+.text-center {
+	text-align: center;
+}
+.text-left {
+	text-align: left;
+}
+.text-right {
+	text-align: right;
+}
+.img-responsive {
+	width: 100%;
+}
+/** clearfix **/
+.clearfix:before, .clearfix:after {
+	content: '';
+	display: table;
+}
+.clearfix:after {
+	clear: both;
+}
+.clearfix {
+	*zoom: 1;
+}
+
+/* Header Styles */

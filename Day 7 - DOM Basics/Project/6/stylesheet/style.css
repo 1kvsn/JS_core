@@ -165,4 +165,61 @@ h6 {
 	*zoom: 1;
 }
 
-/* Header Styles */
+/* Clock Styles */
+
+h1 {
+	font-size: 34px;
+	box-shadow: 1px 2px 32px -8px rgba(34, 33, 33, 0.904);
+}
+.clock-container {
+	max-width: 1200px;
+	width: 100%;
+	padding: 80px;
+}
+.clock-circle {
+	width: 200px;
+	height: 200px;
+	background-color: mistyrose;
+	border: 7px solid rgba(231, 50, 177, 0.651);
+	border-radius: 50%;
+	margin: 0 auto;
+	box-shadow: 1px 2px 32px -8px rgba(34, 33, 33, 0.904);
+	position: relative;
+}
+
+/* Clock Hand Styles */
+.hands {
+	display: block;
+	position: absolute;
+	bottom: 90px;
+	left: 90px;
+	transform: rotate(-90deg);
+	transform-origin: 0%;
+	transition: all 0.05s;
+	transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+.hour-hand {
+	width: 60px;
+	border: 3px solid;
+	border-radius: 4px;
+}
+.minute-hand {
+	width: 85px;
+	border: 2px solid;
+	border-radius: 4px;
+	}
+.second-hand {
+	width: 95px;
+	border: 1px solid red;
+	border-radius: 4px;
+}
+
+/* Center Dot Styles */
+.dot {
+	width: 10px;
+	border: 5px solid red;
+	border-radius: 50%;
+	position: absolute;
+	bottom: 89px;
+	left: 84px;
+}

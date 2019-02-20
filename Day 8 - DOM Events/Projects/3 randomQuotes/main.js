@@ -1,9 +1,5 @@
 var quotes;
 
-// Write your code here
-
-
-
 quotes = [
     {
         "quoteAuthor": "Thomas Edison",
@@ -314,3 +310,16 @@ quotes = [
         "quoteText": "Great talent finds happiness in execution."
     }
 ];
+
+function disQ() {
+	var rand = Math.floor(Math.random() * quotes.length);
+	var node = document.getElementById('para');
+	node.innerText = quotes[rand].quoteText;
+}
+
+document.addEventListener('keydown', (e) => e.keyCode === 32 ? disQ() : false);
+
+// (e) is the function.
+// function.keycode is checked with 32
+// If matched disQ function is executed. 
+// The event listener can be embedded in the function disQ.

@@ -1,23 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="style.css">
-		<title>To Do List</title>
+		<title>Alternate To do</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<!-- Font Awesome  -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 	</head>
-	<body>
-		<main id="main" class="wrapper">
-			<h1>things to do...</h1>
-			<div class="input-container text-center">
-				<input id="input" type="text" placeholder="enter text...">
+	<body class="grid">
+		<h2>todos</h2>
+		<div class="wrapper">
+			<div class="arrow grid">
+				<i class="fas fa-angle-down"></i>
+				<input type="text" placeholder="What needs to be done?" class="todo-text">
 			</div>
-			<div id="ul-container">
-				<ul id="list-container">
-					<li></li>
+			<div>
+				<ul class="main-list">
+					<div class="container">
+						<li class="display-todo"><span class='span-text'></span></li>
+					</div>
 				</ul>
 			</div>
-		</main>
-	<script src="main.js"></script>
+		</div>
+		<div class="button-wrap">
+			<span class="items-left"></span>
+			<button class="all">All</button>
+			<button class="active">Active</button>
+			<button class="complete">Completed</button>
+		</div>
+
 	</body>
+	<script src="main.js"></script>
 </html>

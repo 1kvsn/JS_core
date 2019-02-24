@@ -16,19 +16,16 @@ function enter(e) {
 
 // Adds the text
 function addTag(e) {
-	console.log(e.target);
 	const singleTag = e.target.value; 						//Read #1
 	if (singleTag) {
 		allTags.push(singleTag);
 		e.target.value="";
-		console.log(allTags);
 		displayTag(allTags);
 	}
 }
 
 //displays the tags
 function displayTag(array) {
-	console.log(array)
 	span_select.innerHTML=null;   								// Read #11
 	array.forEach((element, i) => {								// Read #12
 		const span = document.createElement('span');
@@ -47,12 +44,15 @@ function displayTag(array) {
 }
 displayTag(allTags);
 
+// Save to Local Storage
+// function setToLocalStorage(data) {
+// 	localStorage.setItem('tag_creator', JSON.stringify(data));
+
 //To remove a tag
 function removeTag(e) {
-	console.log(e.target);
 	if ( e.target.classList.contains('delete') ) {
 		let id = e.target.dataset.index;
-		console.log(id, 'removeTag');
+		console.dir(event.target);
 		allTags.splice(id, 1);
 		displayTag(allTags);
 	}

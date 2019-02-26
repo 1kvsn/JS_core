@@ -170,7 +170,7 @@ h6 {
 }
  /* Memory Game Styles */
 
- .container-box {
+ .memory-game {
 	 display: grid;
 	 grid-template-columns: repeat(4, 100px);
 	 justify-content: center;
@@ -184,7 +184,7 @@ h6 {
 	 margin: 0 auto;
  }
 
-.box {
+.memory-card {
  width: 100px;
  height: 100px;
  background: black;

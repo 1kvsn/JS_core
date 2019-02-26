@@ -1,33 +1,44 @@
-let container_box = document.querySelector('.container-box');
+const cards = document.querySelectorAll('.memory-card');
 
+let hasFlippedCard = false;
+let firstCard, secondCard;
 
+function flipCard() {
+	this.classList.add('fas');
 
-// box event action
-function boxAction(e) {
-	var setofBoxes = document.querySelectorAll('.box');
-	for ( var i = 0; i < setofBoxes.length; i++ ) {
-		// var selectedBox = setofBoxes[i].dataset.id;
-		// var selectedBox = setofBoxes[i].className;
-		// if ( e.target.classList.contains('fa-radiation-alt') ) {
-		// }
-		setofBoxes[i].setAttribute('data-index', i);
-		let id = e.target.dataset.index;
-		if (id === '0' ) {
-			container_box.children[id].classList.add('fas');
-			
-		}
-	} 
+	if ( !hasFlippedCard ) {
+		hasFlippedCard = true;
+		firstCard = this;
+		return;
+	}
+	secondCard = this;
+	hasFlippedCard = false;
+
+	checkforMatch();
+}
+
+function checkforMatch() {
+	if (firstCard.dataset.name === secondCard.dataset.name) {
+		disableCards();
+		return;
+	}
+	unflipCards();
+}
+
+function disableCards() {
+	firstCard.removeEventListener('click', flipCard);
+	secondCard.removeEventListener('click', flipCard);
+}
+
+function unflipCards() {
+	setTimeout(() => {
+		firstCard.classList.remove('fas');
+		secondCard.classList.remove('fas');
+	}, 1500);
 }
 
 
 
 
 
-
-
-
-
-
-
-//Adds Event listener for each boxes
-container_box.addEventListener('click', boxAction);
+cards.forEach(card => card.addEventListener('click', flipCard));

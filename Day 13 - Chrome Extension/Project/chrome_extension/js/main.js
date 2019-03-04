@@ -1,6 +1,13 @@
+
+
 var quesContainer = document.body.querySelector('.question-container');
 
-var quesBank = [
+function getRandomInt(max) {
+	return Math.floor(Math.random() * Math.floor(max));
+}
+console.log(getRandomInt(100));
+
+var quesBanky = [
   {
     "name": "alt-attribute.md",
     "question": "What is the purpose of the `alt` attribute on images?",
@@ -25,7 +32,7 @@ var quesBank = [
     "question": "What is a callback? Can you show an example using one?",
     "answer": "Callbacks are functions passed as an argument to another function to be executed once an event has occurred or a certain task is complete, often used in asynchronous code. Callback functions are invoked later by a piece of code but can be declared on initialization without being invoked.\n\nAs an example, event listeners are asynchronous callbacks that are only executed when a specific event occurs.\n\n```js\nfunction onClick() {\n  console.log(\"The user clicked on the page.\")\n}\ndocument.addEventListener(\"click\", onClick)\n```\n\nHowever, callbacks can also be synchronous. The following `map` function takes a callback function that is invoked synchronously for each iteration of the loop (array element).\n\n```js\nconst map = (arr, callback) => {\n  const result = []\n  for (let i = 0; i < arr.length; i++) {\n    result.push(callback(arr[i], i))\n  }\n  return result\n}\nmap([1, 2, 3, 4, 5], n => n * 2) // [2, 4, 6, 8, 10]\n```",
     "goodToHear": [
-      "Functions are first-class objects in JavaScript",
+     "Functions are first-class objects in JavaScript",
       "Callbacks vs Promises"
     ],
     "links": [
@@ -159,19 +166,33 @@ var quesBank = [
 	}
 ]
 
-function showAll() {
+Array.prototype.sample = function(){
+  return this[Math.floor(Math.random()*this.length)];
+}
+
+var quesBank = quesBanky.sample();
+
+function showAll(quesBank) {
 	var newDiv = document.createElement('div');
 	newDiv.classList.add('question');
 	newDiv.innerHTML = `
-	<h4>${quesBank[0].question}</h4>
-	<p>${quesBank[0].answer}</p>
+	<h4>${quesBank.question}</h4>
+	<p>${quesBank.answer}</p>`
+
+	quesContainer.appendChild(newDiv);
+	console.log(quesBank[0]);
+
+	var newDiv = document.createElement('div');
+	newDiv.classList.add('question');
+	newDiv.innerHTML = `
 	<h5>Good to hear</h5>
 	<ul>
-		<li>${quesBank[0].goodToHear[0]}</li>
-		<li>${quesBank[0].goodToHear[1]}</li>
-		<li>${quesBank[0].goodToHear[2]}</li>
+		<li>${quesBank.goodToHear[0]}</li>
+		<li>${quesBank.goodToHear[1]}</li>
+		<li>${quesBank.goodToHear[2]}</li>
 	</ul>
 	`
 	quesContainer.appendChild(newDiv);
+
 }
-showAll();
+showAll(quesBank);

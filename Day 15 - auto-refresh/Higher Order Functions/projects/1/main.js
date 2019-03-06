@@ -75,13 +75,24 @@
 
 //Extension 3
 function intersection(...arrays) {
-	let newArr = [];
-	arrays.reduce((initialArray, array, callback ) => {
-		// let initialArray = array;
-		for (let element of array) {
-		}
+	return arrays.reduce((acc, val) => {
+	acc = acc.filter(v => val.includes(v));
+    return acc;
 	});
 }
+
+//console.logging the above function
+// function intersection(...arrays) {
+// 	return arrays.reduce((acc, val) => {
+// 		acc = acc.filter(v => {
+// 			if(val.includes(v)) {
+// 				console.log(val, "<=this is val", v, "<=this is v");
+// 			};
+//     return acc;
+// 		});
+// 	});
+// }
+
 
 console.log(intersection([5, 10, 15, 20], [15, 88, 1, 5, 7], [1, 10, 15, 5, 20]));
 // should log: [5, 15]
@@ -108,10 +119,26 @@ console.log(objOfMatches(['hi', 'howdy', 'bye', 'later', 'hello'], ['HI', 'Howdy
 // should log: { hi: 'HI', bye: 'BYE', later: 'LATER' }
 
 //Extension 6
-function multiMap(arrVals, arrCallbacks) {
-	let obj = {};
-	
+
+var array1 = ['catfood', 'glue', 'beer'];
+
+var array2 = [function(str) { return str.toUpperCase(); }, function(str) { return str[0].toUpperCase() + str.slice(1).toLowerCase(); }, function(str) { return str + str; }]
+
+function multiMap(array1, array2) {
+	return array1.reduce((acc, v) => {
+		acc[v] = array2.reduce((a, fn) => fn(a),v)
+		return acc;
+	},{})
 }
 
-// console.log(multiMap(['catfood', 'glue', 'beer'], [function(str) { return str.toUpperCase(); }, function(str) { return str[0].toUpperCase() + str.slice(1).toLowerCase(); }, function(str) { return str + str; }]));
-// should log: { catfood: ['CATFOOD', 'Catfood', 'catfoodcatfood'], glue: ['GLUE', 'Glue', 'glueglue'], beer: ['BEER', 'Beer', 'beerbeer'] }
+console.log(multiMap(['catfood', 'glue', 'beer'], [function(str) { return str.toUpperCase(); }, function(str) { return str[0].toUpperCase() + str.slice(1).toLowerCase(); }, function(str) { return str + str; }]));
+
+
+should log: { 
+	catfood: ['CATFOOD', 'Catfood', 'catfoodcatfood'], 
+	glue: ['GLUE', 'Glue', 'glueglue'], 
+	beer: ['BEER', 'Beer', 'beerbeer']
+}
+
+// Higher Order Functions of Eloquent Exercise
+// arrays.reduce((a,v) => a.concat(v), []) 

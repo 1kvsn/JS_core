@@ -26,12 +26,14 @@ counter.decrement();
 counter.value();
 
 
-function greaterThan(n) {
-    if(m > n) {
-      return m;
-    };
-}
 
-function greaterThan(n) {
-  return m => m > n;
-}
+
+// function greaterThan(n) {
+//     if(m > n) {
+//       return m;
+//     };
+// }
+
+// function greaterThan(n) {
+//   return m => m > n;
+// }

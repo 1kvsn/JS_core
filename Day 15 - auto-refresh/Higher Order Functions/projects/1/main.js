@@ -94,28 +94,35 @@ function intersection(...arrays) {
 // }
 
 
-console.log(intersection([5, 10, 15, 20], [15, 88, 1, 5, 7], [1, 10, 15, 5, 20]));
-// should log: [5, 15]
+// console.log(intersection([5, 10, 15, 20], [15, 88, 1, 5, 7], [1, 10, 15, 5, 20]));
+// // should log: [5, 15]
 
 //Extension 4
-function union(arrays) {}
+function union(...arrays) {
+	return arrays.reduce((acc, arr2) => acc.concat(arr2.filter(ele=> acc.indexOf(ele)===-1)));
+}
 
-// console.log(union([5, 10, 15], [15, 88, 1, 5, 7], [100, 15, 10, 1, 5]));
+console.log(union([5, 10, 15], [15, 88, 1, 5, 7], [100, 15, 10, 1, 5]));
 // should log: [5, 10, 15, 88, 1, 7, 100]
 
+// val.forEach(element => {
+// 	if (element !== acc[index]) {
+// 		newArr.push(element);
+// 	}
+// });
+// }); return acc;
+
 //Extension 5
-function objOfMatches(array1, array2, callback) {
-	let obj = {};
-	return obj;
-}
+// function objOfMatches(arr1, arr2, cb) {
+// 	return arr1.reduce((acc1, value1, index) => {
+// 		if(cb(value1) === arr2[index]) {
+// 			acc1[value1] = arr2[index];
+// 		}
+// 		return acc1;
+// 	}, {});
+// }
 
-function match(array1, array2) {
-	
-}
-
-
-
-console.log(objOfMatches(['hi', 'howdy', 'bye', 'later', 'hello'], ['HI', 'Howdy', 'BYE', 'LATER', 'hello'], function(str) { return str.toUpperCase(); }));
+// console.log(objOfMatches(['hi', 'howdy', 'bye', 'later', 'hello'], ['HI', 'Howdy', 'BYE', 'LATER', 'hello'], function(str) { return str.toUpperCase(); }));
 // should log: { hi: 'HI', bye: 'BYE', later: 'LATER' }
 
 //Extension 6
@@ -140,5 +147,3 @@ should log: {
 	beer: ['BEER', 'Beer', 'beerbeer']
 }
 
-// Higher Order Functions of Eloquent Exercise
-// arrays.reduce((a,v) => a.concat(v), []) 

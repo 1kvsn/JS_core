@@ -77,4 +77,7 @@ function b() {
   function a() {}
 }
 b();
+debugger;
 console.log(a);
+
+//Logs 1.

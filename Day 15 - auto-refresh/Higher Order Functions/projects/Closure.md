@@ -8,6 +8,8 @@
 	 };
 	 ```
 
+1. In your function, `nonsense`, change the immediate call to a setTimeout so that the call to `blab` comes after 2 seconds. The `blab` function itself should stay the same as before.
+
 function nonsense(string) {
 	var blab = function(){
 	   alert(string);
@@ -16,16 +18,17 @@ function nonsense(string) {
 }
 
 
-1. In your function, `nonsense`, change the immediate call to a setTimeout so that the call to `blab` comes after 2 seconds. The `blab` function itself should stay the same as before.
-
 1. Now, instead of calling `blab` inside of `nonsense`, return `blab` (without invoking it). Call `nonsense` with some string and store the returned value (the `blab` function) in a variable called `blabLater`. Call `nonsense` again with a different string and store the returned value in a variable called `blabAgainLater`.
 
 function nonsense(string) {
-	return blab;
-	
+	var blab = function(){
+	   return string;
+	 }
+	var blabLater = blab();
+	var blabAgainLater = blabLater;
 }
-
-
+nonsense("Hello");
+nonsense("poda");
 
 1. Inspect `blabLater` and `blabAgainLater` in your console. Call them (they are functions!) and see what happens!
 
@@ -40,6 +43,21 @@ function nonsense(string) {
 	    };
 	    //maybe returns something here
 	};
+//=======================================================
+
+
+var lastNameTrier = function(firstName) {
+	function innerFunction(lastName) {
+		return firstName + lastName;
+	} return innerFunction;
+}
+var ex = lastNameTrier('Honey');
+ex("Singh");
+
+
+
+//========================================================
+
 	var firstNameFarmer = lastNameTrier('Farmer'); //logs nothing
 	firstNameFarmer('Brown'); //logs 'Farmer Brown' 
 	```      
@@ -49,7 +67,7 @@ function nonsense(string) {
 	firstNameFarmer('Jane'); //logs 'Farmer Jane'
 	firstNameFarmer('Lynne'); //logs 'Farmer Lynne'
 	```       
-       
+//================================================================================
 
 1. Create a `storyWriter` function that returns an object with two methods. One method, `addWords` adds a word to your story and returns the story while the other one, `erase`, resets the story back to an empty string. Here is an implementation:
 	```javascript
@@ -62,7 +80,24 @@ function nonsense(string) {
 	storyOfMyLife.addWords('I ate some ice cream.'); //'My code broke. I ate some ice cream.'
 	storyOfMyLife.erase(); // ''
 	
-	```  
+	```
+
+var myLoveStory = function storyWriter(text) {
+	let novel ='';
+	return {
+		addWords: function(storyText) {
+		novel += storyText;
+		return novel;
+		},
+		 erase: function() {
+		 novel ='';
+		}
+ 	}
+}
+
+var storyCall = myLoveStory();
+storyCall.addWords('Police is coming');
+
 
 1. Using the module pattern, design a toaster. Use your creativity here and think about what you want your users to be able to access on the outside of your toaster vs what you don't want them to be able to touch.
 		
@@ -93,3 +128,9 @@ function nonsense(string) {
 	Here is a hint: http://jsfiddle.net/PuEy6/
 
 1. [EXTRA CREDIT] Write a function that takes another function\* as an argument and creates a version of the function that can only be called one time. Repeated calls to the modified function will have no effect, returning the value from the original call. How could you do this without using a closure? Is it even possible? How could you do this with a closure? \*Note: This original input function should *not* have any parameters.
+
+
+
+Closure calling method. How to remember what info is saved where!
+Dominant writing direction program.
+

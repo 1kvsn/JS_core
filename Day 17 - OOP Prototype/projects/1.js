@@ -67,4 +67,12 @@ console.log(truck);
 
 // Create an object called Teacher derived from the Person class, and implement a method called teach which receives a string called subject, and prints out.
 
-function
+class Person {
+  constructor(subject) {
+    this.teach = subject;
+  }
+}
+
+const teacher = new Person('Mathematics');
+
+console.log(teacher);

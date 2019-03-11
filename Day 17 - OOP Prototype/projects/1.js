@@ -74,5 +74,4 @@ class Person {
 }
 
 const teacher = new Person('Mathematics');
-
 console.log(teacher);

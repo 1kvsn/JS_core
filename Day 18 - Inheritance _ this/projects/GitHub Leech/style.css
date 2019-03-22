@@ -67,7 +67,39 @@ input {
 	
 	
 }*/
+img {
+	margin-top: 15px;
+}
 
 .section {
 	padding: 1.4rem;
+}
+
+.title {
+	color: #e2a0a0;
+	font-size: 1.4rem;
+	font-weight: 500;
+	padding-top: 10px;
+	padding-left: 10px;
+}
+
+.navbar .fa-github {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.navbar input {
+	color: white;
+	background-color: #363636;
+	background: none;
+	padding: 10px;
+	border: 1px solid mistyrose;
+	box-shadow: inset 0 0 1px 1px mistyrose;
+	/* border-left: 1px solid mistyrose;
+	border-right: 1px solid mistyrose; */
+}
+
+
+.container {
+    width: 100%;
 }

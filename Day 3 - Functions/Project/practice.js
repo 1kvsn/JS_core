@@ -115,8 +115,12 @@
 
 
 // Checks if the string entered by the user is a palindrome. That is that it reads the same forwards as backwards like “racecar”
-function checkPal() {
-  
+
+function checkPal(string) {
+	if (string.split('').reverse().join('') === string) {
+		return console.log('this is a palindrome');
+    } else console.log('this is not a palindrome');
+
 }
 
 // Counts the number of individual words in a string. For added complexity read these strings in from a text file and generate a summary.

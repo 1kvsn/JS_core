@@ -117,7 +117,7 @@
 // Checks if the string entered by the user is a palindrome. That is that it reads the same forwards as backwards like “racecar”
 
 function checkPal(string) {
-	if (string.split('').reverse().join('') === string) {
+	if (string.toLowerCase().split('').reverse().join('') === string.toLowerCase()) {
 		return console.log('this is a palindrome');
     } else console.log('this is not a palindrome');
 

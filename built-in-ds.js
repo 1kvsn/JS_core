@@ -46,6 +46,40 @@ console.log({x: 1}.hasOwnProperty("x"));
 console.log({x: 1}.hasOwnProperty("toString"));
 // → false
 
+// ---- by impatient programmers
+
+// An instance of Map maps keys to values. A single key-value mapping is called an entry.
+
+// #creating maps
+
+// There are three common ways of creating Maps.
+
+// First, you can use the constructor without any parameters to create an empty Map:
+
+const emptyMap = new Map();
+
+// Second, you can pass an iterable (e.g., an Array) over key-value “pairs” (Arrays with two elements) to the constructor:
+
+const map = new Map([
+  [1, 'one'],
+  [2, 'two'],
+  [3, 'three'], // trailing comma is ignored
+]);
+
+// Third, the .set() method adds entries to a Map and is chainable:
+
+const map = new Map()
+  .set(1, 'one')
+  .set(2, 'two')
+  .set(3, 'three');
+
+// #copying maps
+
+
+
+
+
+
 // 2. Symbol
 
 // Symbols are values created with the Symbol function. Unlike strings, newly created symbols are unique—you cannot create the same symbol twice.

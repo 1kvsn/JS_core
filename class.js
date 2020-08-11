@@ -47,3 +47,6 @@ class Square extends Particle {
 }
 
 // Note: a class can only inherit from one other class directly. But it is a tree of inheritance.
+
+// typeof [[class_name]] // function
+// typeof [[instantiated_object_from_class_name]] // object

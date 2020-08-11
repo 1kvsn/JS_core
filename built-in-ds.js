@@ -48,7 +48,9 @@ console.log({x: 1}.hasOwnProperty("toString"));
 
 // ---- by impatient programmers
 
-// An instance of Map maps keys to values. A single key-value mapping is called an entry.
+// An instance of Map maps keys to values. 
+// In a Map, a single key-value mapping is called an entry. 
+// Maps record in which order entries were created and honor that order when listing entries, keys, or values.
 
 // #creating maps
 
@@ -75,9 +77,179 @@ const map = new Map()
 
 // #copying maps
 
+// As we’ll see later, Maps are also iterables over key-value pairs. Therefore, you can use the constructor to create a copy of a Map. That copy is shallow: keys and values are the same; they are not duplicated.
+
+const original = new Map()
+  .set(false, 'no')
+  .set(true, 'yes');
+
+const copy = new Map(original);
+
+// .has() checks if a Map has an entry with a given key. 
+// .delete() removes entries.
+// .size contains the number of entries in a Map. 
+// .clear() removes all entries of a Map.
+
+// .keys() returns an iterable over the keys of a Map:
+
+const map = new Map()
+  .set(false, 'no')
+  .set(true, 'yes')
+;
+
+for (const key of map.keys()) {
+  console.log(key);
+}
+// Output:
+// false
+// true
+
+// We can use spreading (...) to convert the iterable returned by .keys() to an Array:
+
+
+// .values() works like .keys(), but for values instead of keys.
+
+// .entries() returns an iterable over the entries of a Map:
+
+const map = new Map()
+  .set(false, 'no')
+  .set(true, 'yes')
+;
+
+for (const entry of map.entries()) {
+  console.log(entry);
+}
+// Output:
+// [false, 'no']
+// [true, 'yes']
+
+// Spreading (...) converts the iterable returned by .entries() to an Array.
+
+// Map instances are also iterables over entries. In the following code, we use destructuring to access the keys and values of map:
+for (const [key, value] of map) {
+  console.log(key, value);
+}
+// Output:
+// false, 'no'
+// true, 'yes'
+
+// # Converting between Maps and Objects:
+
+// As long as a Map only uses strings and symbols as keys, you can convert it to an object (via Object.fromEntries()):
+const map = new Map([
+  ['a', 1],
+  ['b', 2],
+]);
+
+const obj = Object.fromEntries(map);
+
+
+// You can also convert an object to a Map with string or symbol keys (via Object.entries()):
+const obj = {
+  a: 1,
+  b: 2,
+};
+const map = new Map(Object.entries(obj));
 
 
 
+// Counting Characters
+
+function countChars(chars) {
+  const charCounts = new Map();
+  for (let ch of chars) {
+    ch = ch.toLowerCase();
+    const prevCount = charCounts.get(ch) || 0;
+    charCounts.set(ch, prevCount+1);
+  }
+  return charCounts;
+}
+
+// You can .map() and .filter() an Array, but there are no such operations for a Map. The solution is:
+
+// 1. Convert the Map into an Array of [key, value] pairs.
+// 2. Map or filter the Array.
+// 3. Convert the result back to a Map.
+
+// I’ll use the following Map to demonstrate how that works.
+
+const originalMap = new Map()
+.set(1, 'a')
+.set(2, 'b')
+.set(3, 'c');
+
+// Mapping originalMap:
+
+const mappedMap = new Map( // step 3
+  [...originalMap] // step 1
+  .map(([k, v]) => [k * 2, '_' + v]) // step 2
+);
+
+// Filtering originalMap:
+
+const filteredMap = new Map( // step 3
+  [...originalMap] // step 1
+  .filter(([k, v]) => k < 3) // step 2
+);
+
+// Combining Maps
+
+// There are no methods for combining Maps, which is why we must use a workaround that is similar to the one from the previous section.
+
+// Let’s combine the following two Maps:
+
+const map1 = new Map()
+  .set(1, '1a')
+  .set(2, '1b')
+  .set(3, '1c')
+;
+
+const map2 = new Map()
+  .set(2, '2b')
+  .set(3, '2c')
+  .set(4, '2d')
+;
+
+// To combine map1 and map2, we turn them into Arrays via spreading (...) and concatenate those Arrays. Afterward, we convert the result back to a Map. All of that is done in line A.
+
+const combinedMap = new Map([...map1, ...map2]); // (A)
+
+// #FAQ: Maps
+
+// #1 When should I use a Map, and when should I use an object?
+
+// If you need a dictionary-like data structure with keys that are neither strings nor symbols, you have no choice: you must use a Map.
+
+// If, however, your keys are either strings or symbols, you must decide whether or not to use an object. A rough general guideline is:
+
+// Is there a fixed set of keys (known at development time)?
+
+// Then use an object obj and access the values via fixed keys:
+
+const value = obj.key;
+
+// Can the set of keys change at runtime?
+
+// Then use a Map map and access the values via keys stored in variables:
+
+const theKey = 123;
+map.get(theKey);
+
+// #2 When would I use an object as a key in a Map?
+// You normally want Map keys to be compared by value (two keys are considered equal if they have the same content). That excludes objects. However, there is one use case for objects as keys: externally attaching data to objects. But that use case is served better by WeakMaps, where entries don’t prevent keys from being garbage-collected.
+
+// #3 Why do Maps preserve the insertion order of entries?
+// In principle, Maps are unordered. The main reason for ordering entries is so that operations that list entries, keys, or values are deterministic. That helps, for example, with testing.
+
+// #4 Why do Maps have a .size, while Arrays have a .length?
+// In JavaScript, indexable sequences (such as Arrays and strings) have a .length, while unindexed collections (such as Maps and Sets) have a .size:
+
+// .length is based on indices; it is always the highest index plus one.
+// .size counts the number of elements in a collection.
+
+
+// ------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
 
 
 // 2. Symbol

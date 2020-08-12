@@ -262,4 +262,153 @@ console.log(sym == Symbol("name"));
 
 // —multiple symbols may have the same name.
 
+
+// ------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
+
+
 // 3. Set
+
+// Before ES6, JavaScript didn’t have a data structure for sets. Instead, two workarounds were used:
+
+// The keys of an object were used as a set of strings.
+// Arrays were used as sets of arbitrary values. The downside is that checking membership (if an Array contains a value) is slower.
+// Since ES6, JavaScript has the data structure Set, which can contain arbitrary values and performs membership checks quickly.
+
+// #Creating Sets
+
+// There are three common ways of creating Sets.
+
+// First, you can use the constructor without any parameters to create an empty Set:
+
+const emptySet = new Set();
+
+// Second, you can pass an iterable (e.g., an Array) to the constructor. The iterated values become elements of the new Set:
+
+const set = new Set(['red', 'green', 'blue']);
+
+// Third, the .add() method adds elements to a Set and is chainable:
+
+const set = new Set()
+.add('red')
+.add('green')
+.add('blue');
+
+// #Adding, removing, checking membership
+
+// .add() adds an element to a Set.
+
+const set = new Set();
+set.add('red');
+
+// .has() checks if an element is a member of a Set.
+
+set.has('red') // true
+
+// .delete() removes an element from a Set.
+
+set.delete('red') // true // there was a deletion
+set.has('red') // false
+
+// #Determining the size of a Set and clearing it
+
+// .size contains the number of elements in a Set.
+// .clear() removes all elements of a Set.
+
+// #Iterating over Sets
+
+// Sets are iterable and the for-of loop works as you’d expect:
+
+const set = new Set(['red', 'green', 'blue']);
+for (const x of set) {
+  console.log(x);
+}
+
+// Output:
+// 'red'
+// 'green'
+// 'blue'
+
+// As you can see, Sets preserve insertion order. That is, elements are always iterated over in the order in which they were added.
+
+// Given that Sets are iterable, you can use spreading (...) to convert them to Arrays:
+
+const set = new Set(['red', 'green', 'blue']);
+const arr = [...set]; // ['red', 'green', 'blue']
+
+// #Set Operations
+
+// Sets are missing several common operations. Such an operation can usually be implemented by:
+
+// 1. Converting the input Sets to Arrays by spreading into Array literals.
+// 2. Performing the operation on Arrays.
+// 3. Converting the result to a Set and returning it.
+
+// #Union (a ∪ b)
+
+// Computing the union of two Sets a and b means creating a Set that contains the elements of both a and b.
+
+const a = new Set([1,2,3]);
+const b = new Set([4,3,2]);
+// Use spreading to concatenate two iterables
+const union = new Set([...a, ...b]);
+
+
+// # Intersection (a ∩ b)
+
+// Computing the intersection of two Sets a and b means creating a Set that contains those elements of a that are also in b.
+
+const a = new Set([1,2,3]);
+const b = new Set([4,3,2]);
+
+const intersection = new Set([...a].filter(x => b.has(x)));
+
+// #Difference (a \ b)
+
+// Computing the difference between two Sets a and b means creating a Set that contains those elements of a that are not in b. This operation is also sometimes called minus (−).
+
+const a = new Set([1,2,3]);
+const b = new Set([4,3,2]);
+const difference = new Set([...a].filter(x => !b.has(x)));
+
+// #Mapping over Sets
+
+// Sets don’t have a method .map(). But we can borrow the one that Arrays have:
+
+const set = new Set([1, 2, 3]);
+const mappedSet = new Set([...set].map(x => x * 2)); // Convert mappedSet to an Array to check what’s inside it
+
+// #Filtering Sets
+
+// We can’t directly .filter() Sets, so we need to use the corresponding Array method:
+
+const set = new Set([1, 2, 3, 4, 5]);
+const filteredSet = new Set([...set].filter(x => (x % 2) === 0));
+
+// #iterating and looping
+
+const set = new Set(['red', 'green']);
+for (const x of set.values()) {
+  console.log(x);
+}
+// Output:
+// 'red'
+// 'green'
+
+const set = new Set(['red', 'green']);
+for (const x of set) {
+  console.log(x);
+}
+// Output:
+// 'red'
+// 'green'
+
+// #Convert Set into a Map
+
+// .entries() enables you to convert a Set to a Map:
+
+const set = new Set(['a', 'b', 'c']);
+const map = new Map(set.entries());
+
+// ------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------

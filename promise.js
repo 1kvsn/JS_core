@@ -1,4 +1,5 @@
 //  https://javascript.info/promise-api
+// https://repl.it/@PaulW1/promises
 
 const err = new Error('whoops!') // Error object with error message passed
 
@@ -63,13 +64,13 @@ new Promise((resolve, reject) => {
 
 function delay(ms) {
   return new Promise((resolve, reject) => {
-		setTimeout(() => resolve('im resolved'), 1000);
+		setTimeout(() => resolve('im resolved'), ms);
 	})
 }
 
 delay(3000).then(() => alert('runs after 3 seconds'));
 
-// The delay function returns a promise with pending status which gets eventually resolved and settled after 1000ms. When that happens, the .then method gets executed and the alert popup appears.
+// The delay function returns a promise with pending status which gets eventually resolved and settled after 3000ms. When that happens, the .then method gets executed and the alert popup appears.
 
 // There are 5 static methods of Promise class:
 
@@ -147,3 +148,9 @@ Promise.resolve()
 // Now the order is as intended.
 
 // -----------------------------------------------------
+
+// Which all returns a Promise ?
+
+// - fetch
+// - response.json() (implicit return of arrow function makes it difficult to realise)
+// - then() use explicit return statement when needed.
